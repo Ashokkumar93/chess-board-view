@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      table {
+        border-collapse: collapse;
+      }
+
+      table, td {
+        border: 1px solid black;
+      }
+      td.white{
+        width: 40px;
+        height: 40px;
+        background-color: #fff;
+      }
+      td.black{
+        width:40px;
+        height: 40px;
+        background-color: #000;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>8X8 chess board view</h3>
+    <script>
+      var chessBoardSize = 8
+      var table = document.createElement("table");
+      for (var i = 1; i < chessBoardSize+1; i++) {
+          var tr = document.createElement('tr');
+          for (var j = 1; j < chessBoardSize+1; j++) {
+              var td = document.createElement('td');
+              td.className = (i+j)%2 === 0 ? "white": "black";
+              tr.appendChild(td);
+          }
+          table.appendChild(tr);
+      }
+      document.body.appendChild(table);
+    </script>
+  </body>
+</html>
